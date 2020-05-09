@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${question.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <script src="/js/jquery-3.5.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 clo-md-12 col-sm-12 col-xs-12" >
+            <h4><span th:text="${question.title}"></span></h4>
+            <span class="comment-text">
+                 submitter：<span  th:text="${question.user.name}"></span> |
+                submitted time： <span th:text="${#dates.format(question.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></span> |
+                score：<span style="color: red;" th:text="${question.tag}"></span>
+                <!--question页面  submitter提交者 submitted time提交日期 score分数  字体颜色 等更改-->
+            </span>
+            <hr>
+            <div class="col-lg-12 clo-md-12 col-sm-12 col-xs-12" th:text="${question.description}"></div>
+            <hr class="col-lg-12 clo-md-12 col-sm-12 col-xs-12" >
+            <span class="community-edit"  style="color: #999" th:if="${session.user != null && session.user.id == question.creator}">
+                <a th:href="@{'/publish/'+${question.id}}"  >
+<!--    question页面          edit 按钮     edit改Evaluate-->
+                    <span  class="glyphicon glyphicon-edit" aria-hidden="true">Evaluate </span>
+                </a>
+
+                <a data-toggle="modal" data-target="#myModal" >
+                    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true">Delete </span>
+                </a>
+            </span>
+
+            <!-- 模态框-->
+            <div  class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" >Attention</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                <h6>are you sure want to remove question</h6></br>
+                                 <span th:text="${question.title}"></span>?
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" th:href="@{'/delete/'+${question.id}}" > Remove</a>
+
+
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!--  模态框-->
+
+        </div>
+        <div class="col-lg-3 clo-md-12 col-sm-12 col-xs-12" >
+
+            <div class="col-lg-12 clo-md-12 col-sm-12 col-xs-12" >
+                <h3>Submission details page</h3>
+                <p>Clicking on the name of different submissions can show this page: Submission details page.</p>
+<!--                <h4>Related submissions</h4>-->
+            </div>
+
+            <div class="col-lg-12 clo-md-12 col-sm-12 col-xs-12" >
+                <hr>
+            </div>
+
+            <div class="col-lg-12 clo-md-12 col-sm-12 col-xs-12" >
+            <h4>Submitter:</h4>
+                <div class="media" >
+                    <div class="media-left ">
+                        <a href="#">
+                            <img class="image-size img-circle" th:src="${question.user.avatarUrl}" >
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading" >
+                            <span  th:text="${question.user.name}"></span>
+                        </h4>
+                        </div>
+                    <hr>
+                </div>
+            </div>
+            <hr>
+            <div class="col-lg-12 clo-md-12 col-sm-12 col-xs-12" >
+                 <h4>Related submissions</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

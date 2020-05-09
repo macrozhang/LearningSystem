@@ -1,35 +1,44 @@
 <!DOCTYPE HTML>
-<html layout:decorator="layout">
-    <head>
-        <title>Content page</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
-            <div layout:fragment="content">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learning System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <script src="/js/jquery-3.5.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-
-                <h2 class="display-2 my-3" th:text="${title}">My issues</h2>
-                <p><a class="btn btn-primary" href="/issues/create" role="button">New issue</a></p>
-                <div class="list-group">
-                    <a th:each="issue : ${issues}" href="#" th:href="@{/issues/{id}(id=${issue.id})}" class="list-group-item list-group-item-action" th:classappend="${'list-group-item-' + (issue.status.name() == 'NEW' ? 'danger' : (issue.status.name() == 'DOING' ? 'warning' : 'success')) }">
-                        <div class="d-flex w-100 justify-content-between align-items-center">
-                            <h5 class="mb-1" th:text="${issue.title}">Bad machine</h5>
-                            <span class="badge" th:classappend="${'badge-' + (issue.status.name() == 'NEW' ? 'danger' : (issue.status.name() == 'DOING' ? 'warning' : 'success')) }" th:text="${issue.status}">NEW</span>
-                        </div>
-                        <p class="mb-1" th:text="${issue.description}">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small>
-                            <i class="fas fa-map-marker-alt"></i> <span th:text="${issue.place}"}>PC1</span> 
-                            <i class="fas fa-calendar-alt"></i> <span th:text="${#temporals.format(issue.created_at, 'dd-MM-yyyy')}">01-01-2019</span>
-                            <i class="fas fa-comment"></i> <span class="badge badge-light badge-pill" th:text="${issue.getMessages().size()}">3</span>
-                        </small>
-                    </a>
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 clo-md-12 col-sm-12 col-xs-12" >
+            <h3><span class="glyphicon glyphicon-plus-list" aria-hidden="true"></span><span>  </span> Listing Page</h3>
+            <hr>
+            <div class="media" th:each="task: ${taskList}">
+                <div class="media-left ">
                 </div>
-
-
-
+                <div class="media-body">
+                    <h4 class="media-heading" >
+                        <a th:href="@{'/task/'+${task.id}}" th:text="${task.title}"></a>
+                    </h4>
+                    <span th:text="${task.description}"></span><br>
+                    <span class="comment-text">  <span th:text="${#dates.format(task.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></span></span>
+                </div>
+                <hr>
             </div>
         </div>
-    </body>
-</html>
+        <p class="col-lg-3 clo-md-12 col-sm-12 col-xs-12" >
+            <h3>Listing page</h3>
+            <p>• You need to login correctly when modify data firstly</p>
+            <p>• After authentication list the tasks belonging to the authenticated teacher.</p>
+            <hr>
+        <h3>Clicking on the text: Learning System(in the upper left corner) to return to this page: Listing Page</h3>
+        </div>
+    </div>
+</div>
 
+</body>
+</html>
