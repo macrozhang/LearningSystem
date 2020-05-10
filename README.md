@@ -2,9 +2,8 @@
 
 
 
-<a href="https://youtu.be/sgHvRUAeQQg" target="_blank" target="_blank"><img src="https://i.ytimg.com/vi/sgHvRUAeQQg/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBRvkeUF6A6e44Fy6FgSqm_Xl29Iw" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="https://youtu.be/sgHvRUAeQQg" target="_blank" target="_blank"><img src="https://i.ytimg.com/vi/sgHvRUAeQQg/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBRvkeUF6A6e44Fy6FgSqm_Xl29Iw" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />Learning System 1 Project Demo</a>
 
-https://i.ytimg.com/vi/sgHvRUAeQQg/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBRvkeUF6A6e44Fy6FgSqm_Xl29Iw
 
 ## Project detailed
 
