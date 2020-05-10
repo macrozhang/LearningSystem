@@ -1,9 +1,8 @@
 # Learning management system
 
 
-
-<video src="https://youtu.be/sgHvRUAeQQg" controls="controls" width="640" height="320" autoplay="autoplay">
-</video>
+<a href="https://youtu.be/sgHvRUAeQQg" target="_blank"><img src="http://img.youtube.com/vi/R0uufIdWCD4/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Project detailed
 
