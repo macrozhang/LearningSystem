@@ -1,10 +1,10 @@
 # Learning management system
 
 
-<a href="https://youtu.be/sgHvRUAeQQg" target="_blank"></a>
-<video src="https://blog.niostack.com/rewu.mp4" controls="controls" width="640" height="320" autoplay="autoplay">
-Your browser does not support the video tag.
-</video>
+
+<a href="https://youtu.be/sgHvRUAeQQg" target="_blank" target="_blank"><img src="https://i.ytimg.com/vi/sgHvRUAeQQg/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBRvkeUF6A6e44Fy6FgSqm_Xl29Iw" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+https://i.ytimg.com/vi/sgHvRUAeQQg/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBRvkeUF6A6e44Fy6FgSqm_Xl29Iw
 
 ## Project detailed
 
